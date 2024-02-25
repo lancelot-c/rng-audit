@@ -1,8 +1,8 @@
-## Foundry
+## RNG Audit
 
 **Foundry is a blazing fast, portable and modular toolkit for Ethereum application development written in Rust.**
 
-  [![Verifiable Draws on Discord](https://img.shields.io/discord/939190303397666868?label=Discord)](https://discord.gg/H7u3dXs4)
+
 
 Foundry consists of:
 
