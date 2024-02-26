@@ -1,6 +1,6 @@
 ## RNG Audit
 
-**Blazing fast testing toolkit for Verifiable Draws using [Foundry](https://github.com/foundry-rs/foundry).**
+**Data collection tool for Verifiable Draws using [Foundry](https://github.com/foundry-rs/foundry).**
 
 The collected randomness in then passed in [Diehard tests](https://en.wikipedia.org/wiki/Diehard_tests) for measuring the quality of the random number generator.
 
