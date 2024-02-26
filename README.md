@@ -48,11 +48,11 @@ We would like to collect the following 20 data sets:
 
 This is roughly 32 billion samples total. Now, this is quite a lot of data to collect so instead of using Chainlink VRF we can precompute random values beforehand in `/rng-inputs` and use them as a source of randomness to generate drawing outcomes.
 
-Make sure you have an `.env` with the desired data set parameters:
+Make sure you have an `.env` with the desired data set parameters, for example if you want to collect dataset #2 your `.env` file should look like this:
 ```
-RANGE=
-POSITIONS=
-DRAWS=
+RANGE=17
+POSITIONS=5
+DRAWS=20000000
 ```
 
 Then run:
@@ -64,4 +64,4 @@ Increase `--memory-limit` in case you encounteer a `MemoryLimitOOG` error
 
 ### Parallelization
 
-Each data set can run in parallel if you launch several instances of this script on different machines with different `.env` values
+For faster execution, each data set can run in parallel if you launch several instances of this script on different machines with different `.env` values.
