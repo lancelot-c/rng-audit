@@ -36,7 +36,7 @@ In order to gather enough data, we would like to collect 12.5 million values of 
 ### Fund the VRF subscription
 
 You will need a smart contract whose sole purpose is to trigger VRF requests on-demand and aggregate the resulting raw randomness.
-Thus a contract is available at `src/OnlyRaw.sol` and is deployed for your convenience at [0x1c6d4FdA85e25f1A3C8459191c40221BBe777C6b](https://sepolia.arbiscan.io/address/0x1c6d4FdA85e25f1A3C8459191c40221BBe777C6b#code).
+Such a contract is available at `src/OnlyRaw.sol` and is deployed for your convenience at [0x1c6d4FdA85e25f1A3C8459191c40221BBe777C6b](https://sepolia.arbiscan.io/address/0x1c6d4FdA85e25f1A3C8459191c40221BBe777C6b#code).
 
 Make sure the balance of [its VRF subscription](https://vrf.chain.link/arbitrum-sepolia/88) is greater than 0 LINK, otherwise you will need to add funds to the subscription with your own wallet: `Connect Wallet > Actions dropdown > Fund subscription`.
 
