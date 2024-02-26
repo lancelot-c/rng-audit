@@ -5,8 +5,20 @@
 Once you have collected the randomness with this tool, you can then perform any kind of tests on it such as [Diehard tests](https://en.wikipedia.org/wiki/Diehard_tests) to measure the quality of the random number generator.
 
 ## Setup
-Install dependencies:
+
+Clone this repository on your local machine:
 ```shell
+$ git clone https://github.com/lancelot-c/rng-audit.git
+```
+
+To install Foundry run the following command in your terminal, then follow the onscreen instructions.
+```shell
+$ curl -L https://foundry.paradigm.xyz | bash
+```
+
+Install the project dependencies:
+```shell
+$ cd rng-audit
 $ forge install lancelot-c/verifiable-draws
 $ forge install OpenZeppelin/openzeppelin-contracts
 ```
