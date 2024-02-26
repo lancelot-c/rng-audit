@@ -33,6 +33,14 @@ This is the testing of the random output received from Chainlink VRF.
 
 In order to gather enough data, we would like to collect 12.5 million values of 64-bit each. This can be achieved by triggering 6250 VRF requests because a single request can deliver up to 500 random values of 256-bit each (= 4 * 64-bit), and 6250 * 500 * 4 = 12.5 million
 
+### Fund the VRF subscription
+
+You will need a smart contract whose sole purpose is to trigger VRF requests on-demand and aggregate the resulting raw randomness.
+Thus a contract is available at `src/OnlyRaw.sol` and is deployed for your convenience at [0x5cF52F9Da96bed1EcC66D2eB6A3A969AB90Cd8b1](https://sepolia.arbiscan.io/address/0x5cF52F9Da96bed1EcC66D2eB6A3A969AB90Cd8b1#code).
+
+Make sure the balance of [its VRF subscription](https://vrf.chain.link/arbitrum-sepolia/88) is greater than 0 LINK, otherwise you will need to add funds to the subscription with your own wallet: `Connect Wallet > Actions dropdown > Fund subscription`.
+
+ℹ️ At the time of writing, a single full VRF request costs on average 0.02 LINK. Fund the subscription depending on how much testing you want to perform.
 
 ## Empirical testing on observed drawing outcomes
 
