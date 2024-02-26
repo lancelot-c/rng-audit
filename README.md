@@ -23,6 +23,7 @@ Install the project dependencies:
 cd rng-audit
 forge install lancelot-c/verifiable-draws
 forge install OpenZeppelin/openzeppelin-contracts
+forge install smartcontractkit/chainlink
 ```
 
 
