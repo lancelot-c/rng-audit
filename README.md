@@ -2,7 +2,7 @@
 
 **Randomness collection tool for [Verifiable Draws](https://github.com/lancelot-c/verifiable-draws) using [Foundry](https://github.com/foundry-rs/foundry).**
 
-The randomness collected with this tool is then meant to be passed as an input to a test suite such as [Diehard tests](https://en.wikipedia.org/wiki/Diehard_tests) to measure the quality of the random number generator.
+Once you have collected the randomness with this tool, you can then perform any kind of tests on it such as [Diehard tests](https://en.wikipedia.org/wiki/Diehard_tests) to measure the quality of the random number generator.
 
 ## Setup
 Install dependencies:
@@ -46,7 +46,7 @@ We would like to collect the following 20 data sets:
 | 90,007    | 15            | No              |   100,000,000  |
 | 100,000   | 100           | No              |    10,000,000  |
 
-This is roughly 32 billion samples total. Now, this is quite a lot of data to collect so instead of using Chainlink VRF we can precompute random values beforehand in `/rng-inputs` and use them as a source of randomness to generate drawing outcomes.
+This is roughly 32 billion samples total. Now, this is quite a lot of data to collect so instead of using Chainlink VRF we precompute random values beforehand in `/rng-inputs/*.rng` and use them as a source of randomness to generate drawing outcomes. We are using the `.rng` files provided by [rngresearch.com](https://www.rngresearch.com/download/) but you can replace them with your own if you prefer.
 
 Make sure you have an `.env` with the desired data set parameters, for example if you want to collect dataset #2 your `.env` file should look like this:
 ```
@@ -65,3 +65,8 @@ Increase `--memory-limit` in case you encounteer a `MemoryLimitOOG` error
 ### Parallelization
 
 For faster execution, each data set can run in parallel if you launch several instances of this script on different machines with different `.env` values.
+
+
+## Getting Help
+
+Our [Discord](https://discord.gg/UTcNWAZ9) is the best place to ask for help.
