@@ -16,3 +16,4 @@ docs/
 # Dependencies
 lib/verifiable-draws
 lib/openzeppelin-contracts
+lib/chainlink
