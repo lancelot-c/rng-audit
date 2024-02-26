@@ -40,7 +40,7 @@ Thus a contract is available at `src/OnlyRaw.sol` and is deployed for your conve
 
 Make sure the balance of [its VRF subscription](https://vrf.chain.link/arbitrum-sepolia/88) is greater than 0 LINK, otherwise you will need to add funds to the subscription with your own wallet: `Connect Wallet > Actions dropdown > Fund subscription`.
 
-ℹ️ At the time of writing, a single full VRF request costs on average 0.02 LINK. Fund the subscription depending on how much testing you want to perform.
+ℹ️ At the time of writing, a single full VRF request costs on average 0.02 LINK. Fund the subscription depending on how many requests you want to perform.
 
 ## Empirical testing on observed drawing outcomes
 
