@@ -4,6 +4,8 @@
 
 Once you have collected the randomness with this tool, you can then perform any kind of tests on it such as [Diehard tests](https://en.wikipedia.org/wiki/Diehard_tests) to measure the quality of the random number generator.
 
+If you trust us and you simply want to download the randomness collections that we have generated with this tool you can find them in the `script-outputs` folder. Otherwise, running this tool will enable you to generate your own randomness collections.
+
 ## Setup
 
 Clone this repository on your local machine:
