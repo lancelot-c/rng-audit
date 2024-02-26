@@ -1,8 +1,8 @@
 ## RNG Audit
 
-**Data collection tool for [Verifiable Draws](https://github.com/lancelot-c/verifiable-draws) using [Foundry](https://github.com/foundry-rs/foundry).**
+**Randomness collection tool for [Verifiable Draws](https://github.com/lancelot-c/verifiable-draws) using [Foundry](https://github.com/foundry-rs/foundry).**
 
-The collected randomness in then passed in [Diehard tests](https://en.wikipedia.org/wiki/Diehard_tests) for measuring the quality of the random number generator.
+The randomness collected with this tool is then meant to be passed as an input to a test suite such as [Diehard tests](https://en.wikipedia.org/wiki/Diehard_tests) to measure the quality of the random number generator.
 
 ## Setup
 Install dependencies:
