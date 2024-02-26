@@ -8,19 +8,19 @@ Once you have collected the randomness with this tool, you can then perform any 
 
 Clone this repository on your local machine:
 ```shell
-$ git clone https://github.com/lancelot-c/rng-audit.git
+git clone https://github.com/lancelot-c/rng-audit.git
 ```
 
 To install Foundry run the following command in your terminal, then follow the onscreen instructions.
 ```shell
-$ curl -L https://foundry.paradigm.xyz | bash
+curl -L https://foundry.paradigm.xyz | bash
 ```
 
 Install the project dependencies:
 ```shell
-$ cd rng-audit
-$ forge install lancelot-c/verifiable-draws
-$ forge install OpenZeppelin/openzeppelin-contracts
+cd rng-audit
+forge install lancelot-c/verifiable-draws
+forge install OpenZeppelin/openzeppelin-contracts
 ```
 
 
@@ -69,7 +69,7 @@ DRAWS=20000000
 
 Then run:
 ```shell
-$ forge script script/OnlyOutcomes.s.sol:OnlyOutcomesScript --memory-limit 500000000
+forge script script/OnlyOutcomes.s.sol:OnlyOutcomesScript --memory-limit 500000000
 ```
 
 Increase `--memory-limit` in case you encounteer a `MemoryLimitOOG` error
