@@ -60,7 +60,7 @@ We would like to collect the following 20 data sets:
 
 This is roughly 32 billion samples total. Now, this is quite a lot of data to collect so instead of using Chainlink VRF we precompute random values beforehand in `/rng-inputs/*.rng` and use them as a source of randomness to generate drawing outcomes. We are using the `.rng` files provided by [rngresearch.com](https://www.rngresearch.com/download/) but you can replace them with your own if you prefer.
 
-Make sure you have an `.env` with the desired data set parameters, for example if you want to collect dataset #2 your `.env` file should look like this:
+Make sure you have an `.env` at the root of the project with the desired data set parameters, for example if you want to collect dataset #2 your `.env` file should look like this:
 ```
 RANGE=17
 POSITIONS=5
