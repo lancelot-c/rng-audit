@@ -11,7 +11,7 @@ contract OnlyOutcomesScript is Script {
     // Simulate the checkDrawWinners() function of VerifiableDraws.sol
     function run() public {
 
-        // Get testing variables
+        // Get dataset parameters from .env
         uint32 range = uint32(vm.envUint("RANGE"));
         uint32 positions = uint32(vm.envUint("POSITIONS"));
         uint32 draws = uint32(vm.envUint("DRAWS"));
@@ -34,6 +34,7 @@ contract OnlyOutcomesScript is Script {
 
         for (uint32 d = 0; d < draws; d++) {
 
+            // Periodically log the progression of the script
             if (d % onePercentProgress == 0) {
                 console.logString(string.concat(Strings.toString(percentProgress), "% (", Strings.toString(d), "/", Strings.toString(draws), " draws)"));
                 percentProgress++;
