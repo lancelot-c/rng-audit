@@ -32,7 +32,7 @@ forge install OpenZeppelin/openzeppelin-contracts
 This is the testing of the raw randomness received from Chainlink VRF requests.
 
 A smart contract is needed to generate VRF randomness on-demand and make it available for export.
-Such a contract is available at `src/OnlyRaw.sol` and is deployed for your convenience at [0xBBCD0c8DBdC112dd29af8c57Ee8740bD9feE084B](https://sepolia.arbiscan.io/address/0xBBCD0c8DBdC112dd29af8c57Ee8740bD9feE084B#code). The variable `wordsCounter` is the number of random values that the contract has already generated.
+Such a contract is available at `src/OnlyRaw.sol` and is deployed for your convenience at [0xBBCD0c8DBdC112dd29af8c57Ee8740bD9feE084B](https://sepolia.arbiscan.io/address/0xBBCD0c8DBdC112dd29af8c57Ee8740bD9feE084B#code). The variable `wordsCounter` is the number of random values that the contract has already generated. At the time of writing, the contract holds a total of 3,125,000 random words, which we consider enough to perform a relevant analysis.
 
 ### [Optional] - Generate additional VRF randomness
 
@@ -42,7 +42,7 @@ If you need more randomness, the easiest way is to [registrer a time-based Upkee
 
 ### Export the VRF randomness
 
-At the time of writing, the contract holds a total of 3125000 random words, which we consider enough to perform a relevant analysis.
+[TODO]
 
 ## Empirical testing on observed drawing outcomes
 
