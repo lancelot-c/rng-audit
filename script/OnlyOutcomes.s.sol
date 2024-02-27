@@ -2,7 +2,7 @@
 pragma solidity 0.8.23;
 
 import {Script, console} from "forge-std/Script.sol";
-import "openzeppelin-contracts/contracts/utils/Strings.sol";
+import "@openzeppelin/contracts/utils/Strings.sol";
 
 contract OnlyOutcomesScript is Script {
 
