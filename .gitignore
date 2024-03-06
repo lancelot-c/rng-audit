@@ -10,9 +10,6 @@ out/
 # Docs
 docs/
 
-# Dotenv file
-.env
-
 # Dependencies
 lib/verifiable-draws
 lib/openzeppelin-contracts
