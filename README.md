@@ -3,8 +3,8 @@
 This repository contains scripts enabling anyone to quickly audit the random number generator (RNG) used in the [Verifiable Draws](https://github.com/lancelot-c/verifiable-draws) project.
 
 It is separated in 2 parts:
-- Audit of the Chainlink VRF random numbers that Verifiable Draws uses as a source of randomness
-- Audit of the observed drawing outcomes
+- [Audit of the Chainlink VRF random numbers](https://github.com/lancelot-c/rng-audit?tab=readme-ov-file#empirical-testing-on-chainlink-vrf) that Verifiable Draws uses as a source of randomness
+- [Audit of the observed drawing outcomes](https://github.com/lancelot-c/rng-audit?tab=readme-ov-file#empirical-testing-on-observed-drawing-outcomes)
 
 For each part we collect a huge sample of randomness which can then be manually analyzed by simply looking at the data and realizing that it looks random. Alternatively, you can perform a more in-depth analysis by using the collected data as inputs for the [Diehard tests](https://en.wikipedia.org/wiki/Diehard_tests) to precisely measure the quality of the random number generator.
 
