@@ -20,7 +20,7 @@ git clone https://github.com/lancelot-c/rng-audit.git
 This is the testing of the raw randomness received from Chainlink VRF requests.
 
 A smart contract is needed to generate VRF randomness on-demand and make it available for export.
-Such a contract is available at `src/OnlyRaw.sol` and is deployed for your convenience at [0xBBCD0c8DBdC112dd29af8c57Ee8740bD9feE084B](https://sepolia.arbiscan.io/address/0xBBCD0c8DBdC112dd29af8c57Ee8740bD9feE084B#code). The variable `wordsCounter` is the number of random values that the contract has already generated. At the time of writing, the contract holds a total of 1,500,000 random words, which we consider enough to perform a relevant analysis.
+Such a contract is available at `src/OnlyRaw.sol` and is deployed for your convenience at [0xBBCD0c8DBdC112dd29af8c57Ee8740bD9feE084B](https://sepolia.arbiscan.io/address/0xBBCD0c8DBdC112dd29af8c57Ee8740bD9feE084B#code). The variable [wordsCounter](https://sepolia.arbiscan.io/address/0xbbcd0c8dbdc112dd29af8c57ee8740bd9fee084b#readContract#F4) is the number of random values that the contract has already generated. At the time of writing, the contract holds a total of 1,500,000 random words, which we consider enough to perform a relevant analysis.
 
 ### [Optional] - Generate additional VRF randomness
 
