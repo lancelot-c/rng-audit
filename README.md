@@ -106,6 +106,7 @@ forge install lancelot-c/verifiable-draws
 forge install smartcontractkit/chainlink
 forge install OpenZeppelin/openzeppelin-contracts
 ```
+We will run the test file `OnlyOutcomes.t.sol` which contains an equivalent of the `checkDrawWinners` function of the Verifiable Draws smart contract adapted for fuzz testing.
 
 Make sure your `.env` has the desired dataset parameters, for example if you want to collect dataset #2 your `.env` should have:
 ```
@@ -118,7 +119,9 @@ Then run:
 ```shell
 forge test
 ```
-The dataset #1 should take approximatively 90 seconds to generate.
+The output file is located at `script-outputs/OnlyOutcomes-<RANGE>-<POSITIONS>-<FOUNDRY_FUZZ_RUNS>.txt`.
+
+On a regular consumer laptop the dataset #1 should take approximatively 90 seconds to generate.
 
 ### Parallelization
 
