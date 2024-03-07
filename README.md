@@ -1,6 +1,6 @@
 ## RNG Audit
 
-**Randomness collection tool for [Verifiable Draws](https://github.com/lancelot-c/verifiable-draws) using [Foundry](https://github.com/foundry-rs/foundry).**
+**Randomness collection tool for [Verifiable Draws](https://github.com/lancelot-c/verifiable-draws) using [Viem](https://github.com/wevm/viem) and [Foundry](https://github.com/foundry-rs/foundry).**
 
 Once you have collected the randomness with this tool, you can then perform any kind of tests on it such as [Diehard tests](https://en.wikipedia.org/wiki/Diehard_tests) to measure the quality of the random number generator.
 
