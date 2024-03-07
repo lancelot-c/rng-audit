@@ -49,7 +49,7 @@ async function run() {
 
 async function collectedEntropy(vrfRequest) {
     const data = await publicClient.readContract({
-        address: process.env.ONLY_RAW_CONTRACT_ADDRESS,
+        address: "0xBBCD0c8DBdC112dd29af8c57Ee8740bD9feE084B",
         abi: abi,
         functionName: 'collectedEntropy',
         args: [vrfRequest]
