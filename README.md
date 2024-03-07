@@ -106,7 +106,7 @@ forge install lancelot-c/verifiable-draws
 forge install smartcontractkit/chainlink
 forge install OpenZeppelin/openzeppelin-contracts
 ```
-We will run the test file `OnlyOutcomes.t.sol` which contains an equivalent of the `checkDrawWinners` function of the Verifiable Draws smart contract adapted for fuzz testing.
+We will run the test file `OnlyOutcomes.t.sol` which contains an equivalent of the [checkDrawWinners](https://sepolia.arbiscan.io/address/0xea8f563fe11c87cd90186433ff6ebe1f7ccf3d1e#code#F9#L379) function of the Verifiable Draws smart contract adapted for fuzz testing.
 
 Make sure your `.env` has the desired dataset parameters, for example if you want to collect dataset #2 your `.env` should have:
 ```
