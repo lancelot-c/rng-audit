@@ -32,7 +32,7 @@ forge install OpenZeppelin/openzeppelin-contracts
 This is the testing of the raw randomness received from Chainlink VRF requests.
 
 A smart contract is needed to generate VRF randomness on-demand and make it available for export.
-Such a contract is available at `src/OnlyRaw.sol` and is deployed for your convenience at [0xBBCD0c8DBdC112dd29af8c57Ee8740bD9feE084B](https://sepolia.arbiscan.io/address/0xBBCD0c8DBdC112dd29af8c57Ee8740bD9feE084B#code). The variable `wordsCounter` is the number of random values that the contract has already generated. At the time of writing, the contract holds a total of 3,125,000 random words, which we consider enough to perform a relevant analysis.
+Such a contract is available at `src/OnlyRaw.sol` and is deployed for your convenience at [0xBBCD0c8DBdC112dd29af8c57Ee8740bD9feE084B](https://sepolia.arbiscan.io/address/0xBBCD0c8DBdC112dd29af8c57Ee8740bD9feE084B#code). The variable `wordsCounter` is the number of random values that the contract has already generated. At the time of writing, the contract holds a total of 1,500,000 random words, which we consider enough to perform a relevant analysis.
 
 ### [Optional] - Generate additional VRF randomness
 
@@ -42,7 +42,31 @@ If you need more randomness, the easiest way is to [registrer a time-based Upkee
 
 ### Export the VRF randomness
 
-[TODO]
+Now we want to export all this raw randomness out of the smart contract.
+The `OnlyRaw` script is doing precisely that:
+```shell
+cd scripts/OnlyRaw
+```
+
+Set the variables in the `.env` depending on what values you want to export, for example if you want the first 1,000,000 values:
+```shell
+START_AT=1
+HOW_MANY=1000000
+```
+
+Then run the script:
+```shell
+npm install
+node OnlyRaw.js
+```
+
+The output file is located at `script-outputs/OnlyRaw-<START_AT>-<HOW_MANY>.txt`.
+
+If you need additionnal values, let's say 5,000,000 more values, you can run the same script again but this time by ignoring the values that you've already exported:
+```shell
+START_AT=1000001
+HOW_MANY=5000000
+```
 
 ## Empirical testing on observed drawing outcomes
 
