@@ -1,4 +1,4 @@
-## RNG Audit
+# RNG Audit
 
 This repository contains scripts enabling anyone to quickly audit the random number generator (RNG) used in the [Verifiable Draws](https://github.com/lancelot-c/verifiable-draws) project.
 
@@ -59,9 +59,15 @@ HOW_MANY=5000000
 
 ℹ️ Verifiable Draws is using 64-bit numbers as a source of randomness, however each random word received from Chainlink is 256-bit so each random word is splitted into 4 numbers of 64-bit each and these 64-bit numbers are the ones being exported. This means that when you are exporting 1,000,000 values with this script, you are actually only exporting 250,000 random words from Chainlink. It is important to know this when setting the value for the `HOW_MANY` variable. The maximum value of `HOW_MANY` is therefore the value of [wordsCounter](https://sepolia.arbiscan.io/address/0xbbcd0c8dbdc112dd29af8c57ee8740bd9fee084b#readContract#F4) multiplied by 4.
 
+### Parallelization
+
+For faster execution, you can run several instances of this script in parallel with different `.env` values.
+
+
+
 ## Empirical testing on observed drawing outcomes
 
-We would like to collect the following 20 data sets:
+We would like to collect the following 20 datasets:
 
 | **Range** | **Positions** | **Replacement** | **Draws**      |
 |-----------|---------------|-----------------|----------------|
@@ -86,10 +92,9 @@ We would like to collect the following 20 data sets:
 | 90,007    | 15            | No              |   100,000,000  |
 | 100,000   | 100           | No              |    10,000,000  |
 
-This is roughly 32 billion samples total. Now, this is quite a lot of data to collect so instead of using Chainlink VRF we precompute random values beforehand in `/rng-inputs/*.rng` and use them as a source of randomness to generate drawing outcomes. We are using the `.rng` files provided by [rngresearch.com](https://www.rngresearch.com/download/) but you can replace them with your own if you prefer.
+This is roughly 32 billion samples total. Now, this is quite a lot of data to collect so instead of using Chainlink VRF as a source of randomness we can use fuzz testing which is a built-in feature of Foundry.
 
-
-To install Foundry run the following command in your terminal, then follow the onscreen instructions.
+Install Foundry by running the following command in your terminal, then follow the onscreen instructions:
 ```shell
 curl -L https://foundry.paradigm.xyz | bash
 ```
@@ -102,23 +107,22 @@ forge install smartcontractkit/chainlink
 forge install OpenZeppelin/openzeppelin-contracts
 ```
 
-Make sure you have an `.env` at the root of the project with the desired data set parameters, for example if you want to collect dataset #2 your `.env` file should look like this:
+Make sure your `.env` has the desired dataset parameters, for example if you want to collect dataset #2 your `.env` should have:
 ```
 RANGE=17
 POSITIONS=5
-DRAWS=20000000
+FOUNDRY_FUZZ_RUNS=20000000
 ```
 
 Then run:
 ```shell
-forge script script/OnlyOutcomes.s.sol:OnlyOutcomesScript --memory-limit 500000000
+forge test
 ```
-
-Increase `--memory-limit` in case you encounteer a `MemoryLimitOOG` error
+The dataset #1 should take approximatively 90 seconds to generate.
 
 ### Parallelization
 
-For faster execution, each data set can run in parallel if you launch several instances of this script on different machines with different `.env` values.
+For faster execution, each dataset can be generated in parallel if you launch several instances of this test on different machines with different `.env` values.
 
 
 ## Getting Help
