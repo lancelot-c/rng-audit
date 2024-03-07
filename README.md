@@ -43,6 +43,7 @@ If you need more randomness, the easiest way is to [registrer a time-based Upkee
 ### Export the VRF randomness
 
 Now we want to export all this raw randomness out of the smart contract.
+
 The `OnlyRaw` script is doing precisely that:
 ```shell
 cd scripts/OnlyRaw
@@ -67,6 +68,8 @@ If you need additionnal values, let's say 5,000,000 more values, you can run the
 START_AT=1000001
 HOW_MANY=5000000
 ```
+
+ℹ️ Verifiable Draws is using 64-bit numbers as a source of randomness, however each random word received from Chainlink is 256-bit so each random word is splitted into 4 numbers of 64-bit each and these 64-bit numbers are the ones being exported. This means that when you are exporting 1,000,000 values with this script, you are actually only exporting 250,000 random words from Chainlink. It is important to know this when setting the value for the `HOW_MANY` variable. The maximum value of `HOW_MANY` is therefore the value of [wordsCounter](https://sepolia.arbiscan.io/address/0xbbcd0c8dbdc112dd29af8c57ee8740bd9fee084b#readContract#F4) multiplied by 4.
 
 ## Empirical testing on observed drawing outcomes
 
