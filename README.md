@@ -1,10 +1,12 @@
 ## RNG Audit
 
-**Randomness collection tool for [Verifiable Draws](https://github.com/lancelot-c/verifiable-draws) using [Viem](https://github.com/wevm/viem) and [Foundry](https://github.com/foundry-rs/foundry).**
+This repository contains scripts enabling anyone to quickly audit the random number generator (RNG) used in the [Verifiable Draws](https://github.com/lancelot-c/verifiable-draws) project.
 
-Once you have collected the randomness with this tool, you can then perform any kind of tests on it such as [Diehard tests](https://en.wikipedia.org/wiki/Diehard_tests) to measure the quality of the random number generator.
+It is separated in 2 parts:
+- Audit of the Chainlink VRF random numbers that Verifiable Draws uses as a source of randomness
+- Audit of the observed drawing outcomes
 
-If you trust us and you simply want to download the randomness collections that we have generated with this tool you can find them in the `script-outputs` folder. Otherwise, running this tool will enable you to generate your own randomness collections.
+For each part we collect a huge sample of randomness which can then be manually analyzed by simply looking at the data and realizing that it looks random. Alternatively, you can perform a more in-depth analysis by using the collected data as inputs for the [Diehard tests](https://en.wikipedia.org/wiki/Diehard_tests) to precisely measure the quality of the random number generator.
 
 ## Setup
 
@@ -12,20 +14,6 @@ Clone this repository on your local machine:
 ```shell
 git clone https://github.com/lancelot-c/rng-audit.git
 ```
-
-To install Foundry run the following command in your terminal, then follow the onscreen instructions.
-```shell
-curl -L https://foundry.paradigm.xyz | bash
-```
-
-Install the project dependencies:
-```shell
-cd rng-audit
-forge install lancelot-c/verifiable-draws
-forge install smartcontractkit/chainlink
-forge install OpenZeppelin/openzeppelin-contracts
-```
-
 
 ## Empirical testing on Chainlink VRF
 
@@ -99,6 +87,20 @@ We would like to collect the following 20 data sets:
 | 100,000   | 100           | No              |    10,000,000  |
 
 This is roughly 32 billion samples total. Now, this is quite a lot of data to collect so instead of using Chainlink VRF we precompute random values beforehand in `/rng-inputs/*.rng` and use them as a source of randomness to generate drawing outcomes. We are using the `.rng` files provided by [rngresearch.com](https://www.rngresearch.com/download/) but you can replace them with your own if you prefer.
+
+
+To install Foundry run the following command in your terminal, then follow the onscreen instructions.
+```shell
+curl -L https://foundry.paradigm.xyz | bash
+```
+
+Install the project dependencies:
+```shell
+cd rng-audit
+forge install lancelot-c/verifiable-draws
+forge install smartcontractkit/chainlink
+forge install OpenZeppelin/openzeppelin-contracts
+```
 
 Make sure you have an `.env` at the root of the project with the desired data set parameters, for example if you want to collect dataset #2 your `.env` file should look like this:
 ```
