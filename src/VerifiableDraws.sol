@@ -362,11 +362,12 @@ contract VerifiableDraws is AutomationCompatibleInterface, VRFConsumerBaseV2, Co
     }
 
     function checkDrawWinners(string memory draw_identifier) external view returns (uint32[] memory) {
-        bytes memory totalEntropy = draws[draw_identifier].entropy;
-        require(totalEntropy.length != 0, "The draw has not occured yet. Come back later.");
 
-        uint32 nbWinners = draws[draw_identifier].nbWinners;
+        require(draws[draw_identifier].completed, "This random draw has not occured yet. Come back later.");
+
+        bytes memory totalEntropy = draws[draw_identifier].entropy;
         uint32 nbParticipants = draws[draw_identifier].nbParticipants;
+        uint32 nbWinners = draws[draw_identifier].nbWinners;
         uint32[] memory winnerIndexes = new uint32[](nbWinners); // Fixed sized array, all elements initialize to 0
         uint32 from = 0;
 
